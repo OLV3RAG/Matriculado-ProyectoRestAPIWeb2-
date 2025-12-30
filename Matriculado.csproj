@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Pages\Personas\AgregarAlumno.cshtml" />
+    <Content Remove="Pages\Personas\EditarPersonas.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Pages\Personas\AgregarAlumno.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Personas\EditarPersonas.cshtml" />
+  </ItemGroup>
+
 </Project>

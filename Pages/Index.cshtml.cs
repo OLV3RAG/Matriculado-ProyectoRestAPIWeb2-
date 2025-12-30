@@ -14,7 +14,8 @@ namespace Matriculado.Pages
 
         public void OnGet()
         {
-
+            HttpClient httpClient = new HttpClient();
+            
         }
     }
 }
