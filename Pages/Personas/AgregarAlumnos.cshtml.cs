@@ -8,5 +8,10 @@ namespace Matriculado.Pages.Personas
         public void OnGet()
         {
         }
+
+        public void OnPost() 
+        {
+            
+        }
     }
 }
