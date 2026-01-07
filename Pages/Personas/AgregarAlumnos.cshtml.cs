@@ -9,8 +9,9 @@ namespace Matriculado.Pages.Personas
         {
         }
 
-        public void OnPost() 
+        public void OnPostPersonas() 
         {
+
             
         }
     }
