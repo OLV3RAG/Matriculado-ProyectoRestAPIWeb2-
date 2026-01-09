@@ -1,3 +1,4 @@
+using Aplicacion;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -11,11 +12,13 @@ namespace Matriculado.Pages.Personas
 
         public void OnPostPersonas() 
         {
+            AlumnoNegocio alNeg= new AlumnoNegocio();
+            alNeg.RegistrarInfo();
+        }
 
+        public void CargarComboGen()
+        {
 
-
-
-            
         }
     }
 }
