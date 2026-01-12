@@ -12,7 +12,7 @@
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <form method="post" asp-page-handler="Personas">
+                    <form method="post" asp-page-handler="Persona">
 
                         <div class="row">
                             <div class="col-md-4 mb-3">
@@ -20,8 +20,9 @@
                                     Nombre
                                 </label>
                                 <input class="form-control"
-                                       placeholder="Nombre: Juan" />
-                                <span class="text-danger"></span>
+                                       placeholder="Nombre: Juan"
+                                       asp-for="persona.Nombre" />
+                                <span asp-validation-for="persona.Nombre" class="text-danger"></span>
                             </div>
 
                             <div class="col-md-4 mb-3">
@@ -29,8 +30,9 @@
                                     Apellido Paterno
                                 </label>
                                 <input class="form-control"
-                                       placeholder="Apellido paterno: Pérez" />
-                                <span class="text-danger"></span>
+                                       placeholder="Apellido paterno: Pérez" 
+                                       asp-for="persona.ApellidoPaterno"/> 
+                                <span asp-validation-for="persona.ApellidoPaterno" class="text-danger"></span>
                             </div>
 
                             <div class="col-md-4 mb-3">
@@ -38,8 +40,9 @@
                                     Apellido Materno
                                 </label>
                                 <input class="form-control"
-                                       placeholder="Apellido materno: López" />
-                                <span class="text-danger"></span>
+                                       placeholder="Apellido materno: López"
+                                       asp-for="persona.ApellidoMaterno"/>
+                                <span asp-validation-for="persona.ApellidoMaterno" class="text-danger"></span>
                             </div>
                         </div>
 
@@ -58,8 +61,9 @@
                                     CURP
                                 </label>
                                 <input class="form-control text-uppercase"
-                                       placeholder="CURP: GODE561231HDFRRN09" />
-                                <span class="text-danger"></span>
+                                       placeholder="CURP: GODE561231HDFRRN09" 
+                                       asp-for="persona.CURP"/>
+                                <span asp-validation-for="persona.CURP" class="text-danger"></span>
                             </div>
 
                             <div class="col-md-4 mb-3">

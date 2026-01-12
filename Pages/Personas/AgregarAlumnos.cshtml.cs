@@ -19,6 +19,8 @@ namespace Matriculado.Pages.Personas
 
         public SelectList Generos { get; set; }
 
+        [BindProperty]
+        public Persona persona { get; set; }
 
         public AgregarAlumnosModel()
         {
@@ -31,12 +33,17 @@ namespace Matriculado.Pages.Personas
             GetGenero();
             GetTipoPersona();
         }
-        public void OnPostPersonas()
+        public IActionResult OnPostPersonas()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             GetGenero();
             GetTipoPersona();
             AlumnoNegocio alNeg = new AlumnoNegocio();
             alNeg.RegistrarInfo();
+            return Page();
         }
 
         public async Task GetGenero()
