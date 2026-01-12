@@ -1,24 +1,80 @@
 using Aplicacion;
+using Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Matriculado.Pages.Personas
 {
     public class AgregarAlumnosModel : PageModel
     {
-        public void OnGet()
+        [TempData]
+        public bool showModal { get; set; }
+        [BindProperty]
+        public int TipoPersonaSeleccionado { get; set; }
+        public SelectList TipoPersonas { get; set; }
+
+        [BindProperty]
+        public int GeneroSeleccionado { get; set; }
+
+        public SelectList Generos { get; set; }
+
+
+        public AgregarAlumnosModel()
         {
+            GetGenero();
+            GetTipoPersona();
         }
 
-        public void OnPostPersonas() 
+        public async Task OnPostAsync()
         {
-            AlumnoNegocio alNeg= new AlumnoNegocio();
+            GetGenero();
+            GetTipoPersona();
+        }
+        public void OnPostPersonas()
+        {
+            GetGenero();
+            GetTipoPersona();
+            AlumnoNegocio alNeg = new AlumnoNegocio();
             alNeg.RegistrarInfo();
         }
 
-        public void CargarComboGen()
+        public async Task GetGenero()
         {
+            List<Genero> gene = new List<Genero>();
+            List<SelectListItem> selectIt = new List<SelectListItem>();
+            SelectListItem select = new SelectListItem();
+            AlumnoNegocio alNeg = new AlumnoNegocio();
+            gene = await alNeg.CargarGen();
+            foreach (var gen in gene)
+            {
+                select = new SelectListItem
+                {
+                    Value = gen.id.ToString(),
+                    Text = gen.descripcion
+                };
+                selectIt.Add(select);
+            }
+            Generos = new SelectList(selectIt, "Value", "Text");
+        }
 
+        public async Task GetTipoPersona()
+        {
+            List<TipoPersona> tipoPer = new List<TipoPersona>();
+            List<SelectListItem> selectIt = new List<SelectListItem>();
+            SelectListItem select = new SelectListItem();
+            AlumnoNegocio alNeg = new AlumnoNegocio();
+            tipoPer = await alNeg.CargarTipoPer();
+            foreach (var tp in tipoPer)
+            {
+                select = new SelectListItem
+                {
+                    Value = tp.id.ToString(),
+                    Text = tp.descripcion
+                };
+                selectIt.Add(select);
+            }
+            TipoPersonas = new SelectList(selectIt, "Value", "Text");
         }
     }
 }

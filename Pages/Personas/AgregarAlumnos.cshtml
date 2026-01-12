@@ -16,11 +16,13 @@
 
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label class="form-label">
+                                <label for="validationCustom01" class="form-label">
                                     Nombre
                                 </label>
-                                <input class="form-control"
-                                       placeholder="Nombre: Juan" />
+                                <input type="text"
+                                       placeholder="Nombre: Juan"
+                                       class="form-control" id="validationCustom01"/>
+                                       <div class="valid-feedback">Se ve bien!</div>
                                 <span class="text-danger"></span>
                             </div>
 
@@ -66,9 +68,7 @@
                                 <label class="form-label">
                                     Género
                                 </label>
-                                <select class="form-select">
-                                    <option value="">Seleccione un género</option>
-                                </select>
+                                <select asp-for="GeneroSeleccionado" asp-items="Model.Generos" class="form-control"><option>Selecciona un genero</option></select>
                                 <span class="text-danger"></span>
                             </div>
                         </div>
@@ -76,9 +76,7 @@
                             <label class="form-label">
                                 Tipo de Persona
                             </label>
-                            <select class="form-select">
-                                <option value="">Seleccione un tipo de persona</option>
-                            </select>
+                            <select asp-for="TipoPersonaSeleccionado" asp-items="Model.TipoPersonas" class="form-control"><option>Selecciona tu rol</option></select>
                             <span class="text-danger"></span>
                         </div>
 
