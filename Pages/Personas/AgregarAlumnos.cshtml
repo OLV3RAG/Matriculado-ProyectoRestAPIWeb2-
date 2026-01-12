@@ -16,13 +16,11 @@
 
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom01" class="form-label">
+                                <label class="form-label">
                                     Nombre
                                 </label>
-                                <input type="text"
-                                       placeholder="Nombre: Juan"
-                                       class="form-control" id="validationCustom01"/>
-                                       <div class="valid-feedback">Se ve bien!</div>
+                                <input class="form-control"
+                                       placeholder="Nombre: Juan" />
                                 <span class="text-danger"></span>
                             </div>
 
@@ -76,7 +74,7 @@
                             <label class="form-label">
                                 Tipo de Persona
                             </label>
-                            <select asp-for="TipoPersonaSeleccionado" asp-items="Model.TipoPersonas" class="form-control"><option>Selecciona tu rol</option></select>
+                            <select asp-for="TipoPersonaSeleccionado" asp-items="Model.TipoPersonas" class="form-control"><option>Selecciona tu rol </option></select>
                             <span class="text-danger"></span>
                         </div>
 
