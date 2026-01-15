@@ -33,16 +33,18 @@ namespace Matriculado.Pages.Personas
             GetGenero();
             GetTipoPersona();
         }
-        public IActionResult OnPostPersonas()
+        public async Task<IActionResult> OnPostPersonas()
         {
+            GetGenero();
+            GetTipoPersona();
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            GetGenero();
-            GetTipoPersona();
+            ;
+            Registros per = new Registros();
             AlumnoNegocio alNeg = new AlumnoNegocio();
-            alNeg.RegistrarInfo();
+            per = await alNeg.RegistrarInfo(persona);
             return Page();
         }
 

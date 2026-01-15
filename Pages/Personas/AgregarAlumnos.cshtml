@@ -12,7 +12,7 @@
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <form method="post" asp-page-handler="Persona">
+                    <form method="post" asp-page-handler="Personas">
 
                         <div class="row">
                             <div class="col-md-4 mb-3">
@@ -70,7 +70,11 @@
                                 <label class="form-label">
                                     Género
                                 </label>
-                                <select asp-for="GeneroSeleccionado" asp-items="Model.Generos" class="form-control"><option>Selecciona un genero</option></select>
+                                <select asp-for="GeneroSeleccionado" 
+                                        asp-items="Model.Generos" 
+                                        class="form-control">
+                                    <option>Selecciona un genero</option>
+                                </select>
                                 <span class="text-danger"></span>
                             </div>
                         </div>
@@ -78,16 +82,18 @@
                             <label class="form-label">
                                 Tipo de Persona
                             </label>
-                            <select asp-for="TipoPersonaSeleccionado" asp-items="Model.TipoPersonas" class="form-control"><option>Selecciona tu rol </option></select>
+                                <select asp-for="TipoPersonaSeleccionado" 
+                                        asp-items="Model.TipoPersonas" 
+                                        class="form-control">
+                                    <option>Selecciona tu rol</option>
+                                </select>
                             <span class="text-danger"></span>
                         </div>
-
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">
-                                Registrar Alumno
-                            </button>
-                        </div>
-
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Registrar
+                                </button>
+                            </div>
                     </form>
                 </div>
             </div>
