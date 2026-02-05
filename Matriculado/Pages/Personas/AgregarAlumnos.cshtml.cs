@@ -36,7 +36,7 @@ namespace Matriculado.Pages.Personas
         public async Task<IActionResult> OnPostPersonas()
         {
             GetGenero();
-            GetTipoPersona();
+            GetTipoPersona();       
             if (!ModelState.IsValid)
             {
                 return Page();
