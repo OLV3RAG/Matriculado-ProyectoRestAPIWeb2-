@@ -11,7 +11,7 @@ namespace Contratos.Servicios
     {
         Task<List<Municipio>> Get(string resource);
 
-        Task<Registros> PostPersonas(string resource, Persona per);
+        Task<List<Registros>> PostPersonas(string resource, Persona per);
 
         Task<List<Genero>> GetGenero(string resource);
         Task<List<TipoPersona>> GetTipoPersona(string resource);

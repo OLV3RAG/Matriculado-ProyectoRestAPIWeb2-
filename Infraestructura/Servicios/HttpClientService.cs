@@ -35,13 +35,13 @@ namespace Infraestructura.Servicios
              
         }
 
-        public async Task<Registros> PostPersonas(string resource, Persona per)
+        public async Task<List<Registros>> PostPersonas(string resource, Persona per)
         {
             try
             {
                 var result = await httpClient.PostAsJsonAsync(resource, per);
                 var contenido = await result.Content.ReadAsStringAsync();
-                var perso = System.Text.Json.JsonSerializer.Deserialize<Registros>();
+                var perso = System.Text.Json.JsonSerializer.Deserialize<List<Registros>>(contenido);
                 return perso;
             }
             catch (Exception ex)

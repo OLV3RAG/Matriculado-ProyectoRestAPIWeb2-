@@ -42,7 +42,7 @@ namespace Matriculado.Pages.Personas
                 return Page();
             }
             ;
-            Registros per = new Registros();
+            List<Registros> per = new List<Registros>();
             AlumnoNegocio alNeg = new AlumnoNegocio();
             per = await alNeg.RegistrarInfo(persona);
             return Page();

@@ -11,9 +11,9 @@ namespace Aplicacion
 {
     public class AlumnoNegocio
     {
-        public async Task<Registros> RegistrarInfo(Persona per)
+        public async Task<List<Registros>> RegistrarInfo(Persona per)
         {
-            Registros reg = new Registros();
+            List<Registros> reg = new List<Registros>();
             string resource = "Alumno/Crear";
             HttpClientService httpCS = new HttpClientService();
             reg = await httpCS.PostPersonas(resource, per);
