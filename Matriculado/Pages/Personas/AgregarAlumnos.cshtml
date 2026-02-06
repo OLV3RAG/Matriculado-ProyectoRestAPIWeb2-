@@ -70,8 +70,8 @@
                                 <label class="form-label">
                                     Género
                                 </label>
-                                <select asp-for="GeneroSeleccionado" 
-                                        asp-items="Model.Generoos" 
+                                <select asp-for="@Model.GeneroSeleccionado"
+                                        asp-items="Model.Generos" 
                                         class="form-control">
                                     <option>Selecciona un genero</option>
                                 </select>
@@ -82,8 +82,8 @@
                             <label class="form-label">
                                 Tipo de Persona
                             </label>
-                                <select asp-for="TipoPersonaSeleccionado" 
-                                        asp-items="Model.TipoPersonaas" 
+                                <select asp-for="@Model.TipoPersonaSeleccionado" 
+                                        asp-items="Model.TipoPersonas" 
                                         class="form-control">
                                     <option>Selecciona tu rol</option>
                                 </select>
