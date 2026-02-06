@@ -12,12 +12,12 @@ namespace Matriculado.Pages.Personas
         public bool showModal { get; set; }
         [BindProperty]
         public int TipoPersonaSeleccionado { get; set; }
-        public SelectList TipoPersonas { get; set; }
+        public SelectList TipoPersonaas { get; set; }
 
         [BindProperty]
         public int GeneroSeleccionado { get; set; }
 
-        public SelectList Generos { get; set; }
+        public SelectList Generoos { get; set; }
 
         [BindProperty]
         public Persona persona { get; set; }
@@ -64,7 +64,7 @@ namespace Matriculado.Pages.Personas
                 };
                 selectIt.Add(select);
             }
-            Generos = new SelectList(selectIt, "Value", "Text");
+            Generoos = new SelectList(selectIt, "Value", "Text");
         }
 
         public async Task GetTipoPersona()
@@ -83,7 +83,7 @@ namespace Matriculado.Pages.Personas
                 };
                 selectIt.Add(select);
             }
-            TipoPersonas = new SelectList(selectIt, "Value", "Text");
+            TipoPersonaas = new SelectList(selectIt, "Value", "Text");
         }
     }
 }
