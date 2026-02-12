@@ -14,8 +14,8 @@ namespace Matriculado.Pages.Personas
         public int TipoPersonaSeleccionado { get; set; }
         public SelectList TipoPersonas { get; set; }
 
-        public int GeneroSeleccionado { get; set; }
         [BindProperty]
+        public int GeneroSeleccionado { get; set; }
         public SelectList Generos { get; set; }
 
         [BindProperty]
