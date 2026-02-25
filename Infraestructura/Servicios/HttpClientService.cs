@@ -16,7 +16,7 @@ namespace Infraestructura.Servicios
         public HttpClient httpClient = new HttpClient();
         public HttpClientService()
         {
-            httpClient.BaseAddress = new Uri( "https://localhost:7004/");
+            httpClient.BaseAddress = new Uri( "http://localhost:7004/");
         }
         public async Task<List<Municipio>> Get(string resource)
         {
