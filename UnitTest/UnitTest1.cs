@@ -22,7 +22,7 @@ namespace UnitTest
             HttpClientService httpClientService = new HttpClientService();
             httpClientService.httpClient = new HttpClient();
             httpClientService.httpClient.Timeout.Add(TimeSpan.FromSeconds(60));
-            httpClientService.httpClient.BaseAddress = new Uri("https://localhost:7004/");
+            httpClientService.httpClient.BaseAddress = new Uri("http://localhost:7004/");
             var result = await httpClientService.Get("Catalogos/ObtenerMunicipios");
 
 
@@ -43,7 +43,7 @@ namespace UnitTest
             HttpClientService httpCS = new HttpClientService();
             httpCS.httpClient = new HttpClient();
             httpCS.httpClient.Timeout.Add(TimeSpan.FromSeconds(60));
-            httpCS.httpClient.BaseAddress = new Uri("https://localhost:7004/");
+            httpCS.httpClient.BaseAddress = new Uri("http://localhost:7004/");
             var result = await httpCS.PostPersonas("Alumno/Crear", per);
         }
         
