@@ -13,7 +13,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//app.UseHttpsRedirection();
+//sapp.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
