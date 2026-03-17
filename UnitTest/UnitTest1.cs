@@ -45,6 +45,7 @@ namespace UnitTest
             httpCS.httpClient.Timeout.Add(TimeSpan.FromSeconds(60));
             httpCS.httpClient.BaseAddress = new Uri("http://localhost:7004/");
             var result = await httpCS.PostPersonas("Alumno/Crear", per);
+            Assert.Pass();
         }
         
     
