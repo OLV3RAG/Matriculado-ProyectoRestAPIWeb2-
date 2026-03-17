@@ -49,9 +49,18 @@ namespace UnitTest
         }
 
         [Test]
-        public async Task PostRegistros()
+        public async Task PostRegistros_ShouldReturnSuccess()
         {
             var handler = new Mock<HttpMessageHandler>();
+
+            var json = @"[
+        {
+            ""id"": 1,
+            ""nombre"": ""Jose"",
+            ""apellidoPaterno"": ""Garcia"",
+            ""apellidoMaterno"": ""Alvarado""
+        }
+    ]";
 
             handler
                 .Protected()
@@ -63,7 +72,7 @@ namespace UnitTest
                 .ReturnsAsync(new HttpResponseMessage
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = new StringContent("{ \"success\": true }", System.Text.Encoding.UTF8, "application/json")
+                    Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json")
                 });
 
             var httpClient = new HttpClient(handler.Object);
