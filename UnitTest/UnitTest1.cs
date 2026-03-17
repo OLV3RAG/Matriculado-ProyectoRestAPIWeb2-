@@ -20,7 +20,7 @@ namespace UnitTest
         }
 
         [Test]
-        public async Task GetMunicipios_ShouldReturnOk()
+        public async Task GetMunicipios()
         {
             var handler = new Mock<HttpMessageHandler>();
 
@@ -49,7 +49,7 @@ namespace UnitTest
         }
 
         [Test]
-        public async Task PostRegistros_ShouldReturnSuccess()
+        public async Task PostRegistros()
         {
             var handler = new Mock<HttpMessageHandler>();
 
@@ -62,7 +62,8 @@ namespace UnitTest
                 )
                 .ReturnsAsync(new HttpResponseMessage
                 {
-                    StatusCode = HttpStatusCode.OK
+                    StatusCode = HttpStatusCode.OK,
+                    Content = new StringContent("{ \"success\": true }", System.Text.Encoding.UTF8, "application/json")
                 });
 
             var httpClient = new HttpClient(handler.Object);
