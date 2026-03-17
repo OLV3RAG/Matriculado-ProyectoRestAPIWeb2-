@@ -49,7 +49,7 @@ namespace UnitTest
         }
 
         [Test]
-        public async Task PostRegistros_ShouldReturnSuccess()
+        public async Task PostRegistros()
         {
             var handler = new Mock<HttpMessageHandler>();
 
