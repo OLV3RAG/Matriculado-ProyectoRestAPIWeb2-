@@ -1,5 +1,8 @@
 using Dominio.Entidades;
 using Infraestructura.Servicios;
+using Moq;
+using Moq.Protected;
+using System.Net;
 
 namespace UnitTest
 {
@@ -17,37 +20,73 @@ namespace UnitTest
         }
 
         [Test]
-        public async Task GetMunicipios()
+        public async Task GetMunicipios_ShouldReturnOk()
         {
-            HttpClientService httpClientService = new HttpClientService();
-            httpClientService.httpClient = new HttpClient();
-            httpClientService.httpClient.Timeout.Add(TimeSpan.FromSeconds(60));
-            httpClientService.httpClient.BaseAddress = new Uri("http://localhost:7004/");
-            var result = await httpClientService.Get("Catalogos/ObtenerMunicipios");
+            var handler = new Mock<HttpMessageHandler>();
 
-            Assert.Pass();
+            handler
+                .Protected()
+                .Setup<Task<HttpResponseMessage>>(
+                    "SendAsync",
+                    ItExpr.IsAny<HttpRequestMessage>(),
+                    ItExpr.IsAny<CancellationToken>()
+                )
+                .ReturnsAsync(new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Content = new StringContent("[{ \"id\": 1, \"nombre\": \"Municipio Test\" }]")
+                });
+
+            var httpClient = new HttpClient(handler.Object);
+            httpClient.BaseAddress = new Uri("http://fake-url.com/");
+
+            var service = new HttpClientService();
+            service.httpClient = httpClient;
+
+            var result = await service.Get("Catalogos/ObtenerMunicipios");
+
+            Assert.IsNotNull(result);
         }
 
         [Test]
-
-        public async Task PostRegistros()
+        public async Task PostRegistros_ShouldReturnSuccess()
         {
-            Persona per = new Persona();
-            per.Nombre = "Jose";
-            per.ApellidoPaterno = "Garcia";
-            per.ApellidoMaterno = "Alvarado";
-            per.CURP = "JOALVRTD55HLBTF";
-            per.FechaNacimiento = new DateTime(1982, 02, 01);
-            per.TipoPersonaID = 2;
-            per.GeneroID = 1;
-            HttpClientService httpCS = new HttpClientService();
-            httpCS.httpClient = new HttpClient();
-            httpCS.httpClient.Timeout.Add(TimeSpan.FromSeconds(60));
-            httpCS.httpClient.BaseAddress = new Uri("http://localhost:7004/");
-            var result = await httpCS.PostPersonas("Alumno/Crear", per);
-            Assert.Pass();
+            var handler = new Mock<HttpMessageHandler>();
+
+            handler
+                .Protected()
+                .Setup<Task<HttpResponseMessage>>(
+                    "SendAsync",
+                    ItExpr.IsAny<HttpRequestMessage>(),
+                    ItExpr.IsAny<CancellationToken>()
+                )
+                .ReturnsAsync(new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.OK
+                });
+
+            var httpClient = new HttpClient(handler.Object);
+            httpClient.BaseAddress = new Uri("http://fake-url.com/");
+
+            var service = new HttpClientService();
+            service.httpClient = httpClient;
+
+            var per = new Persona
+            {
+                Nombre = "Jose",
+                ApellidoPaterno = "Garcia",
+                ApellidoMaterno = "Alvarado",
+                CURP = "JOALVRTD55HLBTF",
+                FechaNacimiento = new DateTime(1982, 02, 01),
+                TipoPersonaID = 2,
+                GeneroID = 1
+            };
+
+            var result = await service.PostPersonas("Alumno/Crear", per);
+
+            Assert.IsNotNull(result);
         }
-        
-    
+
+
     }
 }
