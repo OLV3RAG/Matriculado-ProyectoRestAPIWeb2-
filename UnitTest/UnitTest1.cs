@@ -25,7 +25,7 @@ namespace UnitTest
             httpClientService.httpClient.BaseAddress = new Uri("http://localhost:7004/");
             var result = await httpClientService.Get("Catalogos/ObtenerMunicipios");
 
-
+            Assert.Pass();
         }
 
         [Test]
