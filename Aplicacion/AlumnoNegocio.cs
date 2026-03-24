@@ -11,6 +11,7 @@ namespace Aplicacion
 {
     public class AlumnoNegocio
     {
+        private string emailSoporte = "email@email.com";
         public async Task<List<Registros>> RegistrarInfo(Persona per)
         {
             List<Registros> reg = new List<Registros>();
