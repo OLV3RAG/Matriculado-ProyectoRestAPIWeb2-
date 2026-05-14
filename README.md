@@ -1,7 +1,7 @@
 # [TEST README CPN IMAGENES]
 
 <p align="center">
-  <img src="test.png" alt="Banner del Proyecto" width="100%">
+  <img src="IMAGES\test.png" alt="Banner del Proyecto" width="100%">
 </p>
 
 ##  Propósito del Proyecto
@@ -28,7 +28,7 @@ El propósito principal de este desarrollo es **[describe aquí la solución que
 ### Arquitectura del Sistema
 Aquí puedes ver cómo se estructuran los componentes del proyecto:
 
-![Diagrama de Arquitectura](EVALUACIONBBVA.png)
+![Diagrama de Arquitectura](IMAGES\EVALUACIONBBVA.png)
 
 ### Vista de la Interfaz / Resultados
 Captura de pantalla que muestra el funcionamiento actual:
