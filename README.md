@@ -28,7 +28,7 @@ El propósito principal de este desarrollo es **[describe aquí la solución que
 ### Arquitectura del Sistema
 Aquí puedes ver cómo se estructuran los componentes del proyecto:
 
-![Diagrama de Arquitectura](IMAGES\EVALUACIONBBVA.png)
+![Diagrama de Arquitectura](IMAGES/EVALUACIONBBVA.png)
 
 ### Vista de la Interfaz / Resultados
 Captura de pantalla que muestra el funcionamiento actual:
