@@ -1,7 +1,7 @@
 # [TEST README CPN IMAGENES]
 
 <p align="center">
-   <img src="C:\Users\DAY-V\Pictures\Screenshots\Captura de pantalla 2026-02-16 115134.png" alt="Banner del Proyecto" width="100%">
+   <img src="C:\Users\DAY-V\Pictures\Screenshots\test.png" alt="Banner del Proyecto" width="100%">
 </p>
 
 ##  Propósito del Proyecto
