@@ -1,7 +1,7 @@
 # [TEST README CPN IMAGENES]
 
 <p align="center">
-  <img src="https://imgs.search.brave.com/b1DkgJLA9Jzd5rnwZvx591VLLODlaZnmzDzFn7ZV2rE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzdiLzg3/LzFjLzdiODcxY2Vl/NGZmMzI0YjljYzE3/ZWEwMjhiNDA3NGNl/LmpwZw" alt="Banner del Proyecto" width="100%">
+   <img src="C:\Users\DAY-V\Pictures\Screenshots\Captura de pantalla 2026-02-16 115134.png" alt="Banner del Proyecto" width="100%">
 </p>
 
 ##  Propósito del Proyecto
