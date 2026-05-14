@@ -28,7 +28,7 @@ El propósito principal de este desarrollo es **[describe aquí la solución que
 ### Arquitectura del Sistema
 Aquí puedes ver cómo se estructuran los componentes del proyecto:
 
-![Diagrama de Arquitectura](https://imgs.search.brave.com/m6rHS2Dcc0PYRtX4bRa_oqTcj13gcjJXzV7ko34lAL8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/aGhZLVBBWmctTlRI/cXV5Z3AtUEYtR1Ni/T3AyV0FZcWhXLVNT/QWZkdUF0VC1NSGpD/UmtXYjNjNWR1Nm5x/ZzNNRGRUNlUwRXlm/X1JjT0M3aFBoeXBo/ZW5oeXBoZW5YZGlq/Y2tEUndtODZCRXZR/Y3pkMzhWT1JDYWFa/NGV5bW5rWHJPdTJx/cnRLcGs4ZlRFaHN1/WmpqbzQtOC9zMTYw/MC9EaWFncmFtYStk/ZStGbHVqbytwYXJh/K0hhbGxhcitlbCtN/YXhpbW8rQ29tdW4r/RGl2aXNvci5wbmc)
+![Diagrama de Arquitectura](EVALUACIONBBVA.png)
 
 ### Vista de la Interfaz / Resultados
 Captura de pantalla que muestra el funcionamiento actual:
